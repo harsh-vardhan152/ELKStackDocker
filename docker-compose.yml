@@ -1,8 +1,8 @@
 # Docker Compose YAML configuration
-# ELK configuration
+# ELK configuration 
 # Last edit: 18/may/2022
 
-version: "3.5"
+version: '3.5'
 
 services:
   elasticsearch:
@@ -26,7 +26,7 @@ services:
       network.publish_host: _eth0_
     networks:
       - elk
-
+      
   logstash:
     image: docker.elastic.co/logstash/logstash:7.15.0
     volumes:
@@ -49,7 +49,7 @@ services:
       - logging-net
     depends_on:
       - elasticsearch
-
+      
   kibana:
     image: docker.elastic.co/kibana/kibana:7.15.0
     volumes:
@@ -62,7 +62,7 @@ services:
       - elk
     depends_on:
       - elasticsearch
-
+    
   # ElastAlert 2 service
   # elastalert:
   #   image: jertel/elastalert2
