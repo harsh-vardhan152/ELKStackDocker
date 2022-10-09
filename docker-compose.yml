@@ -1,3 +1,7 @@
+# Docker Compose YAML configuration
+# ELK configuration
+# Last edit: 18/may/2022
+
 version: "3.5"
 
 services:
@@ -28,6 +32,8 @@ services:
     volumes:
       - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml:ro,z
       - ./logstash/config/pipelines.yml:/usr/share/logstash/config/pipelines.yml:ro,z
+      # - ./logstash/pipeline/gelf:/usr/share/logstash/pipeline/gelf:ro,z
+      # - ./logstash/pipeline/beats:/usr/share/logstash/pipeline/beats:ro,z
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     ports:
@@ -56,6 +62,17 @@ services:
       - elk
     depends_on:
       - elasticsearch
+
+  # ElastAlert 2 service
+  # elastalert:
+  #   image: jertel/elastalert2
+  #   volumes:
+  #     - ./elastalert2/elastalert.yml:/opt/elastalert/config.yml
+  #     - ./elastalert2/rules:/opt/elastalert/rules
+  #   networks:
+  #     - elk
+  #   depends_on:
+  #     - elasticsearch
 
 networks:
   logging-net:
