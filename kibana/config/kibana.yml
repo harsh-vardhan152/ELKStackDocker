@@ -13,3 +13,5 @@ elasticsearch.username: elastic
 elasticsearch.password: changeme
 #elasticsearch.ssl.certificateAuthorities: "/usr/share/kibana/config/elasticsearch-ca.pem"
 #elasticsearch.ssl.verificationMode: none
+
+#xpack.encryptedSavedObjects.encryptionKey: jlkaj29iopashajlseomby7238galkja
