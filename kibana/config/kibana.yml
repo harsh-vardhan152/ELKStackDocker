@@ -4,7 +4,7 @@
 #
 server.name: kibana
 server.host: 0.0.0.0
-elasticsearch.hosts: [ "http://elasticsearch:9200" ]
+elasticsearch.hosts: ["http://elasticsearch:9200"]
 monitoring.ui.container.elasticsearch.enabled: false
 
 ## X-Pack security credentials
@@ -13,9 +13,4 @@ elasticsearch.username: elastic
 elasticsearch.password: changeme
 #elasticsearch.ssl.certificateAuthorities: "/usr/share/kibana/config/elasticsearch-ca.pem"
 #elasticsearch.ssl.verificationMode: none
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 80cbeb812c6ba747aa88d9fe0520e18a995e21d4
 #xpack.encryptedSavedObjects.encryptionKey: jlkaj29iopashajlseomby7238galkja
